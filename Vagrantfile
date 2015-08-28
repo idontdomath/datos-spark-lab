@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
   config.ssh.insert_key = true
   config.vm.provision :shell, path: "bootstrap.sh"
   config.vm.define "sparkvm" do |master|
-    master.vm.box = "sparkmooc/base2"
+    master.vm.box = "sparkmooc/base"
     master.vm.box_download_insecure = true
     master.vm.boot_timeout = 900
     master.vm.network :forwarded_port, host: ipythonPort, guest: ipythonPort, auto_correct: true   # IPython port (set in notebook config)
